@@ -1,1 +1,1 @@
-# K39 Ranch Management Sysyem
+# K39 Ranch Management System
