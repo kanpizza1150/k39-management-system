@@ -8,7 +8,7 @@ export const Tag = ({ ...props }) => {
     <AntTag
       {...props}
       className={twMerge(
-        "rounded-xl min-w-[50px] text-center",
+        "!rounded-xl min-w-[50px] !text-center h-fit",
         props?.className
       )}
     />

@@ -20,8 +20,8 @@ export const PageHeader: FC<PageHeaderProps> = ({
   const navigate = useNavigate()
   return (
     <>
-      <div className="flex justify-between">
-        <div className="flex gap-2">
+      <div className="flex justify-between  items-center ">
+        <div className="flex items-center gap-2">
           {goBack && (
             <Button
               icon={ICONS.left}
@@ -46,7 +46,7 @@ export const PageHeader: FC<PageHeaderProps> = ({
         </div>
         {extra && extra}
       </div>
-      <Divider />
+      <Divider className="!m-3" />
     </>
   )
 }

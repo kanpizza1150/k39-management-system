@@ -6,18 +6,26 @@ import { CATTLE_STATUS, GENDER, ICattleStatus, IGender } from "../../utils"
 import { CattleStatusTag, GenderTag } from "components/Tags"
 import { Card, Space, Statistic, StatisticProps } from "antd"
 import { useNavigate } from "react-router-dom"
+import Image from "app/Image"
 const columns = [
-  { title: "ชื่อ", dataIndex: "name" },
+  { title: "ชื่อ", dataIndex: "name", fixed: "left" },
+  {
+    title: "",
+    dataIndex: "images",
+    render: (val) => <Image src={val?.[0]} preview={false} height={80} />,
+  },
   { title: "Sire", dataIndex: "sire" },
   { title: "Dam", dataIndex: "dam" },
   {
     title: "เพศ",
     dataIndex: "gender",
+    align: "center",
     render: (val: IGender) => <GenderTag gender={val} />,
   },
   {
     title: "สถานะ",
     dataIndex: "status",
+    align: "center",
     render: (val: ICattleStatus) => <CattleStatusTag status={val} />,
   },
 ]

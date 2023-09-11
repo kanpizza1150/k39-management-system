@@ -6,6 +6,8 @@ import("preline")
 import Parse from "parse/dist/parse.min.js"
 import dayjsDuration from "dayjs/plugin/duration"
 import dayjs from "dayjs"
+import { ConfigProvider } from "antd"
+import { StyleProvider } from "@ant-design/cssinjs"
 dayjs.extend(dayjsDuration)
 
 // Your Parse initialization configuration goes here
@@ -15,4 +17,17 @@ const PARSE_JAVASCRIPT_KEY = "wg4puRBhAoAMCwjVOyDoO2xDTWaa3ht4t2AhRfR3"
 Parse.initialize(PARSE_APPLICATION_ID, PARSE_JAVASCRIPT_KEY)
 Parse.serverURL = PARSE_HOST_URL
 
-ReactDOM.render(<App />, document.getElementById("root"))
+ReactDOM.render(
+  <ConfigProvider
+    theme={{
+      token: {
+        colorPrimary: "#1F2937",
+      },
+    }}
+  >
+    <StyleProvider hashPriority="high">
+      <App />
+    </StyleProvider>
+  </ConfigProvider>,
+  document.getElementById("root")
+)

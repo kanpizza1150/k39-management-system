@@ -36,6 +36,11 @@ const Detail = () => {
       {
         key: "3",
         tabKey: "3",
+        label: "ลูก",
+      },
+      {
+        key: "4",
+        tabKey: "4",
         label: "ประวัติ",
       },
     ]
@@ -49,7 +54,7 @@ const Detail = () => {
       <PageHeader
         title={data?.name}
         goBack="/"
-        description={<CattleStatusTag status={data?.status} />}
+        extra={<CattleStatusTag status={data?.status} />}
       />
       <Tabs items={items} defaultActiveKey="1" />
     </div>

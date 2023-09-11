@@ -1,4 +1,4 @@
-import { Descriptions } from "antd"
+import { Descriptions, Form, Input } from "antd"
 
 export const renderDescription = (items) => {
   return items?.map((d, dIdx) => {
@@ -18,4 +18,15 @@ export const renderDescription = (items) => {
       </Descriptions>
     )
   })
+}
+export const renderFormItem = (items) => {
+  return items
+    ?.filter((i) => !i?.formHide)
+    ?.map((i) => {
+      return (
+        <Form.Item label={i.label} key={i.name} name={i.name}>
+          {i?.comp || <Input />}
+        </Form.Item>
+      )
+    })
 }

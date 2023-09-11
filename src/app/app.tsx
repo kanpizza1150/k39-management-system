@@ -7,8 +7,8 @@ const App = (): JSX.Element => {
   return (
     <main className="min-h-screen">
       <NavBar />
-      <div className="p-3 md:p-7 w-screen flex flex-col justify-center h-full">
-        <div className="flex flex-col max-w-screen-xl w-full m-auto">
+      <div className="pt-20 md:pt-24 p-3 md:p-7 w-screen flex flex-col justify-center h-full">
+        <div className="flex flex-col max-w-screen-xl w-full m-auto pb-10">
           <Router>
             <Routes>
               <Route path="/" element={<CattleList />} />
